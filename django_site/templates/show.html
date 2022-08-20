@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>{{car.mark}} {{car.model}} {{car.price}}</title>
+    {% endblock %}
+{% block content %}
+<h1>{{message}}</h1>
+<table border = '1|0'>
+    <tr>
+        <td>{{car.model}}</td>
+        <td>{{car.mark}}</td>
+        <td>{{car.color}}</td>
+        <td>{{car.price}}</td>
+        </tr>
+</table>
+{% for comment in comments %}
+<b>{{comment.created_at}}</b>
+{{comment.text}}<br>
+{% empty %}
+No Comments
+{% endfor %}
+<form method="post" action="/car/{{car.id}}">
+    {% csrf_token %}
+     {{form.as_p}}
+<!--    <input type="text" id="login" name="login"/>-->
+<!--    <br>-->
+<!--    <input type="password" id="password" name="password"/>-->
+<!--    <br>-->
+<input type="submit" value="safe"/>
+</form>
+{% endblock %}

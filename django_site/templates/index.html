@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>CARS</title>
+    {% endblock %}
+{% block content %}
+<h1>{{message}}</h1>
+{% for car in cars %}
+<table border = '1|0'>
+    <tr>
+        <td>{{car.model}}</td>
+        <td>{{car.mark}}</td>
+        <td>{{car.color}}</td>
+        <td>{{car.price}}</td>
+        <td><img src="{{car.photo.url}}" width="500" height="300"></td>
+        </tr>
+{% endfor %}
+</table>
+{% endblock %}
