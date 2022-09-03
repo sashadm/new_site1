@@ -1,10 +1,5 @@
 from django.db import models
 
-class Human(models.Model):
-    name = models.CharField(max_length=10)
-    surname = models.CharField(max_length=15)
-    age = models.IntegerField(default=0)
-    phone_number = models.CharField(max_length=12)
 
 
 

@@ -15,25 +15,10 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from datetime import datetime
-from .models import Human
 from .models import Cars, Comment
 from .forms import CommentForm, CarForm
 from django.http import HttpResponseRedirect
 
-
-def index(request):
-    # a = datetime.now()
-    # friends = [Human('Sasha', 13, 'Dmitriev', +375299817287), Human('John', 15, 'Wick', 1), Human('Jack', 12, 'Sparrow', 2)]
-    # #return HttpResponse(f'{a.strftime("%H:%M:%S")}')
-    # for i in range(len(friends)):
-    #     friends[i].to_18 = 18 - friends[i].age
-    friends = Human.objects.all()
-    return render(request,'index.html',{'title':'hello','message':'guys','friends':friends})
-
-
-def adults(request):
-    friends = Human.objects.filter(age__gte=18)
-    return render(request, 'index.html', {'title': 'hello', 'message': 'guys', 'friends': friends})
 
 
 def expensive_cars(request):

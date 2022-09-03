@@ -22,8 +22,6 @@ from hello.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello/', index),
-    path('adults/', adults),
     path('car/<int:id>', car),
     path('cars/', expensive_cars),
     path('filter/<str:color>', color_cars),
